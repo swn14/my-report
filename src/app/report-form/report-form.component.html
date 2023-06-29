@@ -1,0 +1,65 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Shipping Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Hours</mat-label>
+            <input
+              matInput
+              placeholder="Hours"
+              formControlName="hours"
+              type="number"
+              step="0.5"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Placements</mat-label>
+            <input
+              matInput
+              placeholder="Placements"
+              formControlName="placements"
+              type="number"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Video Showings</mat-label>
+            <input
+              matInput
+              placeholder="Video Showings"
+              formControlName="videoShowings"
+              type="number"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Bible Studies</mat-label>
+            <input
+              matInput
+              placeholder="Bible Studies"
+              formControlName="bibleStudies"
+              type="number"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
