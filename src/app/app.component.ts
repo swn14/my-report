@@ -7,8 +7,14 @@ import { StorageMap } from '@ngx-pwa/local-storage';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private storage: StorageMap) {}
+  constructor(private storage: StorageMap) {
+    this.storage.keys().subscribe({
+      next: (key) =>
+        this.storage.get(key).subscribe((val: any) => this.reports.push(val)),
+    });
+  }
   title = 'my-report';
+  reports: any = [];
 
   onSubmit(
     value: Partial<{
@@ -21,8 +27,6 @@ export class AppComponent {
       bibleStudies: number | null;
     }>
   ) {
-    console.log(value);
-    console.log('submit event happened!');
     this.storage.set(`${value.year}-${value.month}`, value).subscribe();
   }
 }

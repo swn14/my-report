@@ -34,6 +34,7 @@ export class ReportFormComponent {
   myReportForm = this.fb.group({
     year: [this.currentYear, Validators.required],
     month: [this.months[this.currentMonth], Validators.required],
+    monthNumber: [this.currentMonth, Validators.required],
     hours: [0, Validators.required],
     placements: 0,
     videoShowings: 0,
