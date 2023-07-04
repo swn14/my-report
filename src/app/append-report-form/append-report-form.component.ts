@@ -1,13 +1,12 @@
 import { Component, EventEmitter, Output, inject } from '@angular/core';
-
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-report-form',
-  templateUrl: './report-form.component.html',
-  styleUrls: ['./report-form.component.scss'],
+  selector: 'app-append-report-form',
+  templateUrl: './append-report-form.component.html',
+  styleUrls: ['./append-report-form.component.scss'],
 })
-export class ReportFormComponent {
+export class AppendReportFormComponent {
   @Output() public onSubmitEvent = new EventEmitter();
   private fb = inject(FormBuilder);
   currentDate = new Date();
@@ -47,13 +46,6 @@ export class ReportFormComponent {
     return Array(len)
       .fill(null)
       .map((_, idx) => start + idx * step);
-  }
-
-  onMonthChange(month: string) {
-    this.myReportForm.setValue({
-      ...this.myReportForm.value,
-      monthNumber: this.months.indexOf(month),
-    } as any);
   }
 
   onSubmit(): void {

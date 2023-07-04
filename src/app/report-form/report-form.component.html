@@ -20,7 +20,11 @@
         <div class="col">
           <mat-form-field class="full-width">
             <mat-label>Month</mat-label>
-            <mat-select name="month" formControlName="month">
+            <mat-select
+              name="month"
+              formControlName="month"
+              (ngModelChange)="onMonthChange($event)"
+            >
               <mat-option
                 *ngFor="let month of months; let i = index"
                 [value]="month"

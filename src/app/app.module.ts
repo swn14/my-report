@@ -13,9 +13,10 @@ import { MatTreeModule } from '@angular/material/tree';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { ReportFormComponent } from './report-form/report-form.component';
+import { AppendReportFormComponent } from './append-report-form/append-report-form.component';
 
 @NgModule({
-  declarations: [AppComponent, ReportFormComponent],
+  declarations: [AppComponent, ReportFormComponent, AppendReportFormComponent],
   imports: [
     BrowserModule,
     MatInputModule,
